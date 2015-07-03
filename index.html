@@ -15,6 +15,13 @@
 <body>
 		<div class="container">
 			<div class="row">
+				<div class="col-md-12" id="top">
+					<h1>  </h1>
+
+				</div>
+			</div>
+
+			<div class="row">
 				<div class="col-md-offset-3 col-md-6">
 					<center><h1>The Open Channel</h1></center>
 
@@ -22,11 +29,32 @@
 			</div>
 			<div class="row">
 				<div class="col-md-offset-3 col-md-6">
+				
+	        		<hr>
+	        			<form class="text-center" id="new-todo">
+	          				<div class="form-group">
+	            				<input class="form-control" id="todo-name" placeholder="Express yourself!" autofocus>
+	          				</div>
+	          				<div class="form-group">
+	            				<input class="form-control" id="todo-desc" placeholder="What topic would your expression fall under?">
+	          				</div>
+	          				<div class="form-group">
+	            				<input type="submit" class="btn btn-success" value="Say it!">
+	          				</div>
+	        			</form>
+	        			<hr>
+	        			<div id="todo-list"></div>
 
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-offset-3 col-md-6">
+
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12" id="top">
+					<h1> <h1>
 
 				</div>
 			</div>
@@ -46,5 +74,16 @@
 
 	  <!-- custom script -->
 	  <script type="text/javascript" src="script.js"></script>	
+
+		<script type="text/template" id="todo-template">
+    		<div class="todo">
+      			<p>
+        			<span class="todo-text"><%= name %> - <%= desc %></span>
+        			&nbsp;
+        			<button type="button" class="close delete" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      			</p>
+      			<hr>
+    		</div>
+  		</script>
 </body>
 </html>
