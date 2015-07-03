@@ -47,9 +47,9 @@ $(function() {
     event.preventDefault();
 
     // create new toDo object from form data
-    var toDoName = $('#todo-name').val();
-    var toDoDesc = $('#todo-desc').val();
-    var toDo = new ToDo(toDoName, toDoDesc);
+    var todoname = $('#todo_name').val();
+    var tododesc = $('#todo_desc').val();
+    var toDo = new ToDo(todoname, tododesc);
 
     // save toDo
     toDo.save();
@@ -59,7 +59,7 @@ $(function() {
 
     // reset the form
     $newToDo[0].reset();
-    $('#todo-name').focus();
+    $('#todo_name').focus();
   });
 
   // add class to todo on click to mark it as done
