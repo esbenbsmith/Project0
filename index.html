@@ -3,7 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Open Channel</title>
+	<title>The Open Channel</title>
+	<link rel="megaphone" href="/images/megaicon.ico">
 
 		 <!-- bootstrap css -->
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -27,6 +28,8 @@
 				<center><img id="megaphone" src="images/megaphone.ico" alt="megaphone"></center>
 			</div>
 		</div>
+		
+
 		<div class="row">
 			<div class="col-md-offset-3 col-md-6">
 					<center><h1>The Open Channel</h1></center>
@@ -74,10 +77,15 @@
       			<p>
         			<span class="openinput"><%= topic %> 
         			<br>
+        			<br>
         			 <%= expression %></span>
         			&nbsp;
         			<button type="button" class="close delete" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       			</p>
+      			<form>
+      			<textarea name="comments" id="comments" cols="25" rows="3"></textarea>
+  				<input type="submit" value="submit" />
+				</form>
       					
       			<hr>
     		</div>
