@@ -7,3 +7,12 @@
     margin-left: auto;
     margin-right: auto;
 }
+body {
+	background-color:#33CCFF;
+}
+.listsection {
+background-color:white;
+padding:10px;
+border-radius:4px;
+
+}

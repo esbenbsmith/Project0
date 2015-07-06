@@ -13,6 +13,76 @@
 
 </head>
 <body>
-	
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12"id="top">
+				<span>  
+				<br>  
+				</span>
+
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-offset-3 col-md-6">
+				<center><img id="megaphone" src="images/megaphone.ico" alt="megaphone"></center>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-offset-3 col-md-6">
+					<center><h1>The Open Channel</h1></center>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-offset-3 col-md-6">
+				<form class="text-center" id="new-open">
+	          		<div class="form-group">
+	          			<input class="form-control" id="topic" placeholder="What topic would your expression fall under?" autofocus>
+	            		
+	          		</div>
+	          		<div class="form-group">
+	            		<textarea class="form-control" rows="3" id="expression" >
+	            		</textarea>
+	            			
+	          		</div>
+	          		<div class="form-group">
+	            		<input type="submit" class="btn btn-success" value="Say it!">
+	          		</div>
+	        	</form>
+	        	<hr>
+	        	<div class="listsection">
+	        		<div id="post-list">
+	        		</div>
+	        	</div>
+
+			</div>
+		</div>
+	</div>
+	  <!-- jquery -->
+	  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+	  <!-- bootstrap js -->
+	  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	  <!-- underscore -->
+	  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+
+	  <!-- custom script -->
+	  <script type="text/javascript" src="script.js"></script>	
+
+	  <script type="text/template" id="open-template">
+    		<div class="open">
+      			<p>
+        			<span class="openinput"><%= topic %> 
+        			<br>
+        			 <%= expression %></span>
+        			&nbsp;
+        			<button type="button" class="close delete" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      			</p>
+      					
+      			<hr>
+    		</div>
+  		</script>
+
+
 </body>
 </html>
