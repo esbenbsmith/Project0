@@ -19,3 +19,14 @@ border-radius:4px;
 #comment {
 	height:50px;
 }
+
+#enter {
+	height:100px;
+}
+.shaded {
+}
+.border {
+	border-style:solid;
+	border-radius:10px;
+	border-color:black;
+}
