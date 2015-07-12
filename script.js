@@ -1,91 +1,88 @@
-$ (function () {
-
+$(function() {
 
   // constructor functions
-  function Posts(topic, expression) {
-    this.topic = topic;
-    this.expression = expression;
+  function ToDo(name, desc) {
+    this.name = name;
+    this.desc = desc;
   }
 
-   // `Posts.all` contains our seed data
-  Posts.all = [
-    new Posts( 'Bad diet choices','I drank 4 gallons of coca-cola last night'),
-    new Posts( 'lifehacks','I intentionally talk weird to avoid people'),
-    new Posts( 'Fucked up life!','I have 2 families')
+  // `ToDo.all` contains our seed data
+  ToDo.all = [
+  new ToDo('Example topic', 'example expression')
+   
   ];
 
-    Posts.prototype.save = function() {
-    
-    // store our new post
-    Posts.all.push(this);
-    console.log(Posts.all);
+  ToDo.prototype.save = function() {
+    // store our new todo
+    ToDo.all.push(this);
+    console.log(ToDo.all);
   };
 
-  Posts.prototype.render = function() {
-    
-    // append our new open to the page
-    var $open = $(opentemplate(this));
-    this.index = Posts.all.indexOf(this);
-    $open.attr('data-index', this.index);
-    $openlist.append($open);
+  ToDo.prototype.render = function() {
+    // append our new todo to the page
+    var $todo = $(toDoTemplate(this));
+    this.index = ToDo.all.indexOf(this);
+    $todo.attr('data-index', this.index);
+    $toDoList.append($todo);
   };
-    // form to create new open
-  var $newOpen = $('#new-open');
 
-  // element to hold our list of opens
-  var $openlist = $('#post-list');
+  // form to create new todo
+  var $newToDo = $('#new-todo');
 
-   // open template
-  var opentemplate = _.template($('#open-template').html());
+  // element to hold our list of todos
+  var $toDoList = $('#todo-list');
 
-    // append existing todos (from seed data) to `$toDoList`
+  // todo template
+  var toDoTemplate = _.template($('#todo-template').html());
+
+  // append existing todos (from seed data) to `$toDoList`
   // `_.each` is an "iterator" function provided by Underscore.js
-  _.each(Posts.all, function (open, index) {
-    open.render();
+  _.each(ToDo.all, function (todo, index) {
+    todo.render();
   });
 
-   // submit form to create new todo
-  $newopen.on('submit', function(event) {
+  // submit form to create new todo
+  $newToDo.on('submit', function(event) {
     event.preventDefault();
 
-     // create new toDo object from form data
-    var opentopic = $('#topic').val();
-    var openexpression = $('#expression').val();
-    var Posts = new Posts(opentopic, openexpression);
+    // create new toDo object from form data
+    var toDoName = $('#todo-name').val();
+    var toDoDesc = $('#todo-desc').val();
+    var toDo = new ToDo(toDoName, toDoDesc);
 
-        // save toDo
-    Posts.save();
+    // save toDo
+    toDo.save();
 
     // render toDo
-    Posts.render();
+    toDo.render();
 
-       // reset the form
-    $newopen[0].reset();
-    $('#topic').focus();
+    // reset the form
+    $newToDo[0].reset();
+    $('#todo-name').focus();
   });
 
-      // add class to todo on click to mark it as done
-  $openlist.on('click', '.openinput', function() {
+  // add class to todo on click to mark it as done
+  $toDoList.on('click', '.todo-text', function() {
     $(this).toggleClass('done');
   });
 
   // remove todo from model and view
-  $openlist.on("click", ".delete", function () {
-    var $open = $(this).closest(".open");
-    var $index = $open.attr('data-index');
+  $toDoList.on("click", ".delete", function () {
+    var $todo = $(this).closest(".todo");
+    var index = $todo.attr('data-index');
 
     // remove todo from the `ToDo.all` array (model)
-    Posts.all.splice(index, 1);
-    console.log(Posts.all);
+    ToDo.all.splice(index, 1);
+    console.log(ToDo.all);
 
     // remove todo from the DOM (view)
-    $open.remove();
+    $todo.remove();
 
     // reset indexes in DOM to match `ToDo.all` array
     // $.each loops through DOM elements
-    $('.open').each(function(index) {
+    $('.todo').each(function(index) {
       $(this).attr('data-index', index);
     });
   });
-  
+
 });
