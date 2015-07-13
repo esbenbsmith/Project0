@@ -10,7 +10,7 @@
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
 	  <!-- custom styles -->
-	  <link rel="stylesheet" type="text/css" href="style.css">
+	  <link rel="stylesheet" type="text/css" href="/styles/style.css">
 
 </head>
 <body>
@@ -26,7 +26,7 @@
 		<div class="row">
 			<div class="col-md-offset-3 col-md-6">
 				
-				<center><img id="megaphone" src="images/megaphone.ico" alt="megaphone"></center>
+				<center><img  class="megaphone" src="http://www.clipartbest.com/cliparts/dc7/z7a/dc7z7aEKi.png" alt="megaphone"/></center>
 			</div>
 
 		</div>
@@ -45,8 +45,8 @@
 	            		
 	          		</div>
 	          		<div class="form-group">
-	            		<textarea  class="form-control"  id="todo-desc" placeholder="What's on your mind?" >
-	            		</textarea>
+	            		<input  class="form-control"  id="todo-desc" placeholder="What's on your mind?" >
+	            		</input>
 	            			
 	          		</div>
 	          		<div class="form-group">
@@ -54,11 +54,15 @@
 	          		</div>
 	        	</form>
 	        	<hr>
+	        	
+
 	        	<div class="listsection">
+				
 	        		<div id="todo-list">
 	        		</div>
-	        	</div>
 
+	        	</div>
+				
 			</div>
 		</div>
 	</div>
@@ -72,19 +76,23 @@
 	  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 
 	  <!-- custom script -->
-	  <script type="text/javascript" src="script.js"></script>	
+	  <script type="text/javascript" src="/scripts/script.js"></script>	
 
 	  <script type="text/template" id="todo-template">
-    		<div class="todo">
+    		<div class="todo" >
+    		<ul>
+    		<li id="post-<%= id %>" data-id="<%= id %>">
       			<p>
-        			<span class="post-input"><%= name %> 
+        			<span class="todo-text"><%= name %> 
         			<br>
         			<br>
         			 <%= desc %></span>
         			&nbsp;
         			<button type="button" class="close delete" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				 
       			</p>
-
+      		</li>
+      		</ul>
       			<form>
       			<textarea name="comments" id="comments" cols="25" rows="3"></textarea>
 				</form>

@@ -1,3 +1,6 @@
+
+
+
 $(function() {
 
   // constructor functions
@@ -8,8 +11,8 @@ $(function() {
 
   // `ToDo.all` contains our seed data
   ToDo.all = [
-  new ToDo('Example topic', 'example expression')
-   
+    new ToDo('Loud fart', 'I farted in class today, it was so embarassing!');
+    
   ];
 
   ToDo.prototype.save = function() {
