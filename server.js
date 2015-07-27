@@ -13,9 +13,10 @@ app.use("/scripts",express.static(__dirname + "/scripts"));
 
 
 var posts = [
-  {id: 1, name: 'loud fart', desc: 'in class today -_-'},
+  {id: 1, name: 'Loud fart', desc: 'in class today -_-'},
   
 ];
+//fart even louder
 
 
 
